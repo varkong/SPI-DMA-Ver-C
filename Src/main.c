@@ -62,8 +62,8 @@ static void MX_SPI1_Init(void);
 /* USER CODE BEGIN 0 */
 
 uint8_t dataTx [18] = {0,0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0,8};
-uint8_t dataTx2 [100] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
-uint8_t dataTx3 [18] = {0,0,0,1};
+uint8_t dataTx2 [6] = {0xAA,0xBB,0xCC,0xDD,0xEE,0xFF};
+
 /* USER CODE END 0 */
 
 int main(void)
@@ -90,10 +90,9 @@ int main(void)
 	
 	
 	
-	while(1)
-	{
+	
 		HAL_SPI_Transmit_DMA(&hspi1, dataTx,9);
-	}
+	
 
   /* USER CODE END 2 */
 
@@ -231,20 +230,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-//void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi1)
-//{
-//	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_8);
-//			HAL_SPI_Transmit_DMA(hspi1, dataTx,9);
 
-//		}
-////		i = i + 1;
-////		
-////		if (i>4)
-////		{
-////			i = 0;
-////		}
-////		
-////		HAL_SPI_Transmit_DMA(&hspi1, dataTx3,1);
 
 /* USER CODE END 4 */
 
